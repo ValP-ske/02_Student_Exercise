@@ -26,13 +26,13 @@ class Polygon:
         #       lower pen; draw sides; lift pen.
         self._pen.penup()
         self._pen.goto(self._x, self._y)
-        self._pen.setheading(0)
+        self._pen.setheading(self._angle)
         self._pen.pencolor(self._color)
         self._pen.pensize(self._pen_size)
         self._pen.pendown()
         for _ in range(self._sides):
             self._pen.forward(self._side_length)
-            self._pen.left(360//self._sides)
+            self._pen.left(360 / self._sides)
         self._pen.penup()
         # raise NotImplementedError
 
